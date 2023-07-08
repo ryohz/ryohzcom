@@ -28,7 +28,7 @@
 		--gray: #6b7280;
 		--red: #b91c1c;
 		--green: #15803d;
-		--blue: #0ea5e9;
+		--blue: #1e40af;
 		--indicator-block: linear-gradient(
 			to right bottom,
 			#5b21b6,
@@ -41,12 +41,9 @@
 	}
 
 	:global(body) {
-		/* background-color: var(--bg); */
-		/* background-image: linear-gradient(to right top, #020617, #0b1125, #0d1834, #111f44, #172554); */
-		/* background: linear-gradient(45deg, #020617, #0b1125, #0d1834, #111f44 100%, #172554 200%); */
-		/* background:  background-image: radial-gradient(circle, #020617, #0b1125, #0d1834, #111f44, #172554); */
 		color: var(--fg);
 		background-image: radial-gradient(circle, #020617, #0b1125, #0d1834);
+		/* background-image: radial-gradient(circle, #0d1834, #0b1125, #020617); */
 		font-family: 'inter';
 	}
 
@@ -92,6 +89,5 @@
 	}
 	.twitter_link:hover {
 		cursor: pointer;
-		color: var(--blue);
 	}
 </style>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Indicator from '../../lib/Indicator.svelte';
 	import Card from '../../lib/card.svelte';
+	import { blur } from 'svelte/transition';
 
 	let current_content = 'skills';
 
@@ -49,7 +50,7 @@
 </script>
 
 {#if current_content === 'profile'}
-	<div class="profile">
+	<div class="profile" transition:blur={{duration: 200}}>
 		<div class="top">
 			<h1 class="name">Ryohz</h1>
 			<p class="attributes">(Japanese/student/infosec/webdev)</p>
@@ -64,7 +65,7 @@
 {/if}
 
 {#if current_content === 'skills'}
-	<div class="skills">
+	<div class="skills" transition:blur={{duration: 200}}>
 		{#each skills as skill}
 			<Card
 				name={skill.name}
@@ -99,46 +100,45 @@
 />
 
 <style>
-		.profile {
-			display: flex;
-			flex-direction: column;
-			position: absolute;
-			align-items: left;
-			top: 150px;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 30%;
-		}
+	.profile {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		align-items: left;
+		top: 150px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 30%;
+	}
 
-		.top {
-			display: flex;
-			position: relative;
-			flex-direction: column;
-		}
+	.top {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+	}
 
-		.icon {
-			position: relative;
-			left: 50%;
-			transform: translateX(-50%);
-			margin-top: 50px;
-			width: 100px;
-			height: 100px;
-		}
+	.icon {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		margin-top: 50px;
+		width: 100px;
+		height: 100px;
+	}
 
-		.description {
-			margin-top: 50px;
-			overflow-wrap: break-word;
-		}
+	.description {
+		margin-top: 50px;
+		overflow-wrap: break-word;
+	}
 
-		.skills {
-			position: absolute;
-			top: 150px;
-			left: 50%;
-			width: 80%;
-			transform: translateX(-52%);
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-		}
-
-        @media screen and (max-width: 1000px) {}
+	.skills {
+		position: absolute;
+		top: 150px;
+		left: 50%;
+		width: 80%;
+		transform: translateX(-52%);
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		/* repeat(auto-fit, minmax(200px, 1fr)); */
+	}
 </style>

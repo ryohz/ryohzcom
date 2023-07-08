@@ -57,17 +57,31 @@
 			{/if}
 			{#if current_content === content.name}
 				<p class="current_name">{content.name}</p>
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+				<div
+					class="current_block"
+					style="--width: {block_width};--height: {block_height};--inset: {inset};"
+					on:mouseover={() => show_name(content.name)}
+					on:mouseleave={() => show_name('')}
+					on:click={() => content.event()}
+				/>
+			{:else}
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+				<div
+					class="block"
+					style="--width: {block_width};--height: {block_height};--inset: {inset};"
+					on:mouseover={() => show_name(content.name)}
+					on:mouseleave={() => show_name('')}
+					on:click={() => content.event()}
+				/>
 			{/if}
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-			<div
-				class="block"
-				style="--width: {block_width};--height: {block_height};--inset: {inset}"
-				on:mouseover={() => show_name(content.name)}
-				on:mouseleave={() => show_name('')}
-				on:click={() => content.event()}
-			/>
 		</div>
 	{/each}
 </div>
@@ -116,14 +130,15 @@
 	}
 	.block:hover {
 		background: var(--bg-alt);
+		cursor: pointer;
 	}
 	.block::before {
 		content: '';
 		inset: var(--inset);
 		border-radius: 5px;
 		position: absolute;
-		box-shadow: 0 0 0 20px var(--bg-alt);
-		background: var(--indicator-block);
+		/* box-shadow: 0 0 0 20px var(--bg-alt); */
+		/* background: var(--indicator-block); */
 		z-index: -1;
 	}
 	.block::after {
@@ -133,6 +148,40 @@
 		position: absolute;
 		background: var(--indicator-block);
 		z-index: -1;
+		filter: blur(2px);
+	}
+	
+	.current_block {
+		display: flex;
+		width: var(--width);
+		height: var(--height);
+		background-color: var(--bg);
+		margin-top: 30px;
+		border-radius: 5px;
+		position: relative;
+	}
+	.current_block:hover {
+		background: var(--bg-alt);
+		cursor: pointer;
+	}
+	.current_block::before {
+		content: '';
+		inset: var(--inset);
+		border-radius: 5px;
+		position: absolute;
+		/* box-shadow: 0 0 0 20px var(--bg-alt); */
+		background: var(--indicator-block);
+		z-index: -1;
+	}
+	.current_block::after {
+		content: '';
+		inset: var(--inset);
+		border-radius: 5px;
+		position: absolute;
+		background: var(--indicator-block);
+		z-index: -1;
 		filter: blur(10px);
 	}
+
+
 </style>
