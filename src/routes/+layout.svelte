@@ -37,7 +37,7 @@
 			#0060af,
 			#0369a1
 		);
-		--card: linear-gradient(to right top, #0f172a, #13233a, #152f4b, #133c5d, #0c4a6e);;
+		--card: linear-gradient(to right top, #0f172a, #13233a, #152f4b, #133c5d, #0c4a6e);
 	}
 
 	:global(body) {
