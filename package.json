@@ -38,7 +38,7 @@
 	},
 	"type": "module",
 	"volta": {
-		"node": "16.20.1"
+		"node": "18.16.1"
 	},
 	"dependencies": {
 		"sqlite3": "^5.1.6"
