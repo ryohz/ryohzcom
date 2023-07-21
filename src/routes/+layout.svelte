@@ -5,16 +5,8 @@
 	<div class="internal">
 		<a href="/" class="nav_link">Home</a>
 		<a href="/blog" class="nav_link">Blog</a>
-		<a href="/about" class="nav_link">About</a>
+		<a href="/links" class="nav_link">Links</a>
 		<a href="/portfolio" class="nav_link">Portfolio</a>
-	</div>
-	<div class="external">
-		<a
-			href="https://twitter.com/ryohz_"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="twitter_link">twitter</a
-		>
 	</div>
 </div>
 
@@ -54,6 +46,15 @@
 	@font-face {
 		font-family: 'inter';
 		src: url('/src/fonts/inter/Inter-Regular.woff') format('woff');
+
+		font-family: 'nerd';
+		src: url('/src/fonts/nerd/SymbolsNerdFont-Regular.ttf') format('truetype');
+
+		font-family: 'cooperhewitt';
+		src: url('/src/fonts/cooperhewitt/CooperhewittBold-K4BW.ttf') format('truetype');
+
+		font-family: 'hacked';
+		src: url('/src/fonts/hacked/Hacked-KerX.ttf') format('truetype');
 	}
 
 	.nav {
@@ -73,21 +74,6 @@
 		color: var(--fg);
 	}
 	.nav_link:hover {
-		cursor: pointer;
-	}
-
-	.external {
-		display: flex;
-		width: 50%;
-		justify-content: end;
-	}
-
-	.twitter_link {
-		margin-right: 10px;
-		font-size: large;
-		color: var(--fg);
-	}
-	.twitter_link:hover {
 		cursor: pointer;
 	}
 </style>

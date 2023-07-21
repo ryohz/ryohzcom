@@ -1,1 +1,1 @@
-<p>blog</p>
+coming soon
