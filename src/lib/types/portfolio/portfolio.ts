@@ -7,3 +7,7 @@ export interface Portfolio {
 	skills: Skill[];
 	links: Link[];
 }
+
+
+
+

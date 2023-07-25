@@ -7,7 +7,9 @@
 	const between = (min: number, max: number): number => {
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	};
+
 	let count = 0;
+
 	const filter = () => {
 		count++;
 		filter_state2 = false;
@@ -24,6 +26,7 @@
 			}, difference);
 		}, random);
 	};
+
 	filter();
 </script>
 
