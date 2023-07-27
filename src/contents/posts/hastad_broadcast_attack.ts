@@ -1,0 +1,1 @@
+interface Article {id: string,title: string,date: string,topics: string,content: string,}export const hastad_broadcast_attack: Article = {id: 'hastad_broadcast_attack',title: 'hastad broadcast attack',date: 'crypto',topics: '2023-07-27',content: '#hastad broadcast attack\n========================\n2023/07/27'}
