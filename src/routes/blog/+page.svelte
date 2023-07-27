@@ -6,5 +6,11 @@
 </script>
 
 {#each blog_datas as blog_data}
-<p>{blog_data.title}</p>
+<a href={`blog/${blog_data.id}`} class='article_link'>{blog_data.title}</a>
 {/each}
+
+<style>
+.article_link {
+    color: var(--fg);
+}
+</style>

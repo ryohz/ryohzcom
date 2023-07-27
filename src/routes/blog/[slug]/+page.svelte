@@ -1,8 +1,7 @@
 <script lang="ts">
-    /** @type {import('./$types').PageData} */    
-    export let data;
-    console.log(data.content);
-</script>
+	/** @type {import('./$types').PageData} */
+	export let data;
 
-{data.content}
+        console.log(data.data);
+</script>
 
