@@ -5,3 +5,5 @@
         console.log(data.data);
 </script>
 
+{data.data.content}
+

@@ -1,5 +1,5 @@
 
-                export const hastad_broadcast_attack = {
+                export const data = {
                     id: 'hastad_broadcast_attack',
                     title: 'hastad broadcast attack',
                     date: 'crypto',
