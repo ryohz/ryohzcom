@@ -16,9 +16,8 @@ export async function load({params}) {
 
     if (is_exist) {
         /* @vite-ignore */
-        const article_data_location = `../../../contents/posts/${id}`;
         try {
-            const data = await import(article_data_location);
+            const data = await import(`../../../contents/posts/${id}.ts`);
             return {
                 data: data.data,
                 err: undefined
