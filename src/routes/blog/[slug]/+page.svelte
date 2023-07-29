@@ -1,6 +1,6 @@
-<script lang="ts">
-	// import { marked } from 'marked';
-	// var texme = require('texme');
+<script lang='ts'>
+	import { marked } from 'marked';
+	var texme = require('texme');
 	import type { Article } from '$lib/types/article';
 
 	/** @type {import('./$types').PageData} */
