@@ -1,16 +1,35 @@
+import {blog_datas} from "../../../contents/datas";
+import type {BlogData} from "../../../contents/datas";
+import {error} from '@sveltejs/kit';
+
 /** @type {import('./$type').PageServerLoad} */
 export async function load({params}) {
-    try {
-        const data = await import('../../../contents/posts/hastad_broadcast_attack');
-        return {
-            data: data.data,
-            err: undefined
-        }
-    } catch (err) {
-        return {
-            data: undefined,
-            err: err
+    const id = params.slug;
+
+    let is_exist = false;
+    const datas: BlogData[] = blog_datas;
+    for (const blog_data of datas) {
+        if (blog_data.id === id) {
+            is_exist = true;
         }
     }
+
+    if (is_exist) {
+        /* @vite-ignore */
+        const article_data_location = `../../../contents/posts/${id}`;
+        try {
+            const data = await import(article_data_location);
+            return {
+                data: data.data,
+                err: undefined
+            }
+        } catch (err) {
+            return {
+                data: undefined,
+                err: err
+            }
+        }
+    }
+    throw error(404, 'Not found');
 }
 
