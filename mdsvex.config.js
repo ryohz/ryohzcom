@@ -11,7 +11,7 @@ const config = defineConfig({
 
     highlight: {
         highlighter: async (code, lang = 'text') => {
-            const highlighter = await shiki.getHighlighter({theme: 'material-theme-darker'})
+            const highlighter = await shiki.getHighlighter({theme: 'one-dark-pro'})
             const html = escapeSvelte(highlighter.codeToHtml(code, {lang}))
             return `{@html \`${html}\` }`
         }

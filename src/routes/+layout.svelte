@@ -16,12 +16,11 @@
 	:global(:root) {
 		--bg: #18181b;
 		--bg-alt: #27272a;
+		--gray: #1c1917;
 		--fg: #d4d4d8;
-                --fg-alt: #a1a1aa;
-		--gray: #6b7280;
+		--fg-alt: #a1a1aa;
 		--red: #b91c1c;
-		--green: #15803d;
-		--blue: #1e40af;
+		--accent: #15803d;
 		--indicator-block: linear-gradient(
 			to right bottom,
 			#5b21b6,
@@ -36,14 +35,14 @@
 		--size-3: 10px;
 		--size-4: 15px;
 		--size-5: 20px;
-                --size-6: 30px;
-                --size-7: 45px;
-                --size-8: 65px;
-                --content-size-1: 100px;
-                --content-size-2: 200px;
-                --content-size-3: 350px;
-                --content-size-4: 550px;
-                --content-size-5: 800px;
+		--size-6: 30px;
+		--size-7: 45px;
+		--size-8: 65px;
+		--content-size-1: 100px;
+		--content-size-2: 200px;
+		--content-size-3: 350px;
+		--content-size-4: 400px;
+		--content-size-5: 600px;
 	}
 
 	:global(body) {
@@ -63,8 +62,11 @@
 		font-family: 'nerd';
 		src: url('/src/fonts/nerd/SymbolsNerdFont-Regular.ttf') format('truetype');
 
-                font-family: 'space';
-                src: url('/src/fonts/SpaceGrotesk-2.0.0/woff2/SpaceGrotesk[wght].woff2') format('woff2');
+		font-family: 'jetbrainsMono';
+		src: url('/src/fonts/jetbrainsmono/ttf/JetBrainsMono-Medium.ttf') format('truetype');
+
+		font-family: 'space';
+		src: url('/src/fonts/SpaceGrotesk-2.0.0/woff2/SpaceGrotesk[wght].woff2') format('woff2');
 	}
 
 	.nav {

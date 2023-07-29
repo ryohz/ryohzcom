@@ -66,4 +66,10 @@
 		padding: 5px;
 		border-radius: var(--size-3);
 	}
+
+	/* global */
+	:global(code) {
+		font-family: 'jetbrainsMono';
+                filter: brightness(90%);
+	}
 </style>

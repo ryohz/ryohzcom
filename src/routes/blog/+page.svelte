@@ -7,26 +7,51 @@
 	const posts: Post[] = data.posts;
 </script>
 
+<div class="top">
+	<h1>Blog</h1>
+</div>
+<div class="line" />
 <div class="links">
 	{#each posts as post}
-		<a href={`blog/${post.slug}`}>
-			<hgroup class="link">
-				<p class="date">{post.date}</p>
-				<h2 class="title">{post.title}</h2>
-				<p class="description">{post.description}</p>
-			</hgroup>
-		</a>
+		<hgroup>
+			<a href={`blog/${post.slug}`}>
+				<hgroup class="link">
+					<p class="date">{post.date}</p>
+					<h2 class="title">{post.title}</h2>
+					<p class="description">{post.description}</p>
+				</hgroup>
+			</a>
+			<div class="tags">
+				{#each post.categories as category}
+					<span class="tag">&num;{category}</span> {/each}
+			</div>
+		</hgroup>
 	{/each}
 </div>
 
 <style>
+	/* top */
+	.top {
+		max-inline-size: var(--content-size-5);
+		margin-inline: auto;
+	}
+
+	.line {
+		max-inline-size: var(--content-size-5);
+		margin-inline: auto;
+		height: 2px;
+		width: 100%;
+		background-color: var(--bg-alt);
+	}
+
+	/* links */
 	p {
 		color: var(--fg-alt);
 		font-size: var(--size-4);
 	}
 
 	.links {
-		margin-top: var(--content-size-1);
+		margin-top: var(--size-7);
 		max-inline-size: var(--content-size-5);
 		margin-inline: auto;
 		display: flex;
@@ -57,10 +82,23 @@
 		content: ' ';
 		width: 100%;
 		height: 2%;
-		background-color: var(--green);
+		background-color: var(--accent);
 		transform: scale(0, 1);
 		transform-origin: left bottom;
 		transition: transform 0.3s;
+	}
+
+	.tags {
+		display: flex;
+		flex-direction: row;
+		gap: var(--size-3);
+	}
+
+	.tag {
+		background-color: var(--gray);
+		width: fit-content;
+		padding: var(--size-1);
+		border-radius: var(--size-3);
 	}
 
 	.description {
@@ -69,10 +107,14 @@
 
 	/* event */
 	.link:hover > p {
-		color: var(--green);
+		color: var(--accent);
 	}
 
 	.link:hover > .title::after {
 		transform: scale(1, 1);
+	}
+
+	.tag:hover {
+		cursor: pointer;
 	}
 </style>
