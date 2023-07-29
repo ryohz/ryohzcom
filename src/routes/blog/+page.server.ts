@@ -1,9 +1,8 @@
-import { blog_datas } from "../../contents/datas";
+import type { Post } from '$lib/types'
 
-/** @type {import('./$types').PageLoad} */
-export function load() {
-    return {
-        blog_datas: blog_datas,
-    }
+export async function load({ fetch }) {
+	const response = await fetch('api/posts')
+	const posts: Post[] = await response.json()
+	return { posts }
 }
 

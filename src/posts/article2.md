@@ -1,7 +1,7 @@
 ---
-id: article1
-title: First post
-description: First post.
+id: article2
+title: Second post
+description: Second post.
 date: '2023-4-14'
 categories:
   - sveltekit

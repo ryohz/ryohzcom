@@ -1,1 +1,0 @@
-interface Article {id: string,title: string,date: string,topics: string,content: string,}export const test_title: Article = {id: 'test_title',title: 'タイトル',date: 'dev,test',topics: '2023-07-26',content: '#タイトル\n========================\n2023/07/26'}
