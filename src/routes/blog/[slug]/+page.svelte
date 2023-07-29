@@ -1,14 +1,6 @@
-<script lang='ts'>
-	import { marked } from 'marked';
-	// var texme = require('texme');
-	import type { Article } from '$lib/types/article';
-
-	/** @type {import('./$types').PageData} */
-	export let data: {
-		data: Article;
-		err: string;
-	};
-
+<script lang="ts">
+	export let data;
+        
 </script>
 
-{@html marked(data.data.content)}
+{@html data.html}
