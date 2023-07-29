@@ -1,9 +1,13 @@
 <script lang="ts">
-	/** @type {import('./$types').PageData} */
-	export let data;
+	import { marked } from 'marked';
+        import type { Article } from '$lib/types/article';
 
-        console.log(data.data);
+	/** @type {import('./$types').PageData} */
+	export let data: {
+        data: Article,
+        err: string,
+        };
+        
 </script>
 
-{data.data.content}
-
+{@html marked(data.data.content)}
