@@ -2,20 +2,17 @@
 id: article1
 title: First post
 description: First post.
-date: '2023-4-14'
+date: '2023-1-23'
 categories:
-  - sveltekit
-  - svelte
+    - none
 published: true
 ---
 
 ## Markdown
 
-Hey friends! 👋
-
 ```ts
 function greet(name: string) {
-	console.log(`Hey ${name}! 👋`)
+	console.log(name)
 }
 ```
 

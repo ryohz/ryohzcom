@@ -10,7 +10,6 @@
 	};
 
 	let html = data.content.html;
-	console.log(html);
 	let meta: Post = data.metadata;
 </script>
 

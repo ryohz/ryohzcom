@@ -13,8 +13,6 @@
 	let title = data.meta.title;
 	let description = data.meta.description;
 	let html = data.content.html;
-
-	console.log(data.content);
 </script>
 
 <svelte:head>

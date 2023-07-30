@@ -32,6 +32,7 @@
 <style>
 	/* top */
 	.top {
+                margin-top: var(--content-size-1);
 		max-inline-size: var(--content-size-5);
 		margin-inline: auto;
 	}

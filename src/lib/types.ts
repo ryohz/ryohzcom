@@ -22,3 +22,16 @@ export interface Skill {
     category: "language" | "framework&library" | "tool"
 }
 
+export interface Achivement {
+    title: string,
+    description: string,
+    year: number,
+    future: boolean,
+    blog: string | false,
+}
+
+export interface Link {
+    name: string,
+    class: string,
+    href: string,
+}

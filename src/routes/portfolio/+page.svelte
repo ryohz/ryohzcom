@@ -1,20 +1,34 @@
 <script lang="ts">
+	import { writable, get } from 'svelte/store';
+	import type { Writable } from 'svelte/store';
+
 	import profile_info from '../../datas/portfolio/profile';
 	import skills_info from '../../datas/portfolio/skills';
+	import archivements_info from '../../datas/portfolio/achievements';
 
-	import type { Profile, Skill } from '$lib/types';
+	import type { Achivement, Profile, Skill } from '$lib/types';
 	import ProfileComponent from './profile_component.svelte';
 	import SkillsComponents from './skills_components.svelte';
-
-	let current = 'skills';
-	let content_list = ['profile', 'skills', 'achivement'];
+	import AchivementsComponent from './achivements_component.svelte';
+	import { onMount } from 'svelte';
 
 	const profile: Profile = profile_info;
 	const skills: Skill[] = skills_info;
+	const achivements: Achivement[] = archivements_info;
+
+	let current = "profile"
+	let content_list = ['profile', 'skills', 'achivements'];
 
 	const update_current = (next: string) => {
 		current = next;
 	};
+
+	export let years: Writable<number[]> = writable([]);
+	let latest: number = achivements[achivements.length - 1].year;
+	let earliest: number = achivements[0].year;
+	for (let i = earliest; i <= latest; i++) {
+		years.update((arr) => [...arr, i]);
+	}
 </script>
 
 <div class="index">
@@ -32,6 +46,9 @@
 {/if}
 {#if current === 'skills'}
 	<SkillsComponents {skills} />
+{/if}
+{#if current === 'achivements'}
+	<AchivementsComponent {achivements} years={get(years)} />
 {/if}
 
 <style>

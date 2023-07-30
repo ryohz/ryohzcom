@@ -1,12 +1,40 @@
-<script>
+<script lang="ts">
+	import type { Link } from '$lib/types';
+	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
+
+	let initial_path = $page.url.pathname;
+
+	let links: Link[] = [
+		{ name: 'home', href: '/', class: 'nav_link' },
+		{ name: 'blog', href: '/blog', class: 'nav_link' },
+		{ name: 'links', href: '/links', class: 'nav_link' },
+		{ name: 'portfolio', href: '/portfolio', class: 'nav_link' }
+	];
+
+	let current_selected_number: number = 0;
+
+	for (const i in links) {
+		if (links[Number(i)].href === initial_path) {
+			current_selected_number = Number(i);
+			break;
+		}
+	}
+
+	function update_selected(index: number) {
+		links[current_selected_number].class = 'nav_link';
+		links[index].class = 'selected';
+		current_selected_number = index;
+	}
+
+	update_selected(current_selected_number);
 </script>
 
 <div class="nav">
 	<div class="internal">
-		<a href="/" class="nav_link">Home</a>
-		<a href="/blog" class="nav_link">Blog</a>
-		<a href="/links" class="nav_link">Links</a>
-		<a href="/portfolio" class="nav_link">Portfolio</a>
+		{#each links as link, i}
+			<a href={link.href} class={link.class} on:click={() => update_selected(i)}>{link.name}</a>
+		{/each}
 	</div>
 </div>
 
@@ -16,20 +44,12 @@
 	:global(:root) {
 		--bg: #18181b;
 		--bg-alt: #27272a;
-		--gray: #1c1917;
+		--gray: #52525b;
 		--fg: #d4d4d8;
 		--fg-alt: #a1a1aa;
 		--red: #b91c1c;
-		--accent: #15803d;
-		--indicator-block: linear-gradient(
-			to right bottom,
-			#5b21b6,
-			#2e41bb,
-			#0053b8,
-			#0060af,
-			#0369a1
-		);
-		--card: linear-gradient(to right top, #0f172a, #13233a, #152f4b, #133c5d, #0c4a6e);
+		--accent: #14b8a6;
+		--accent-alt: #7c3aed;
 		--size-1: 3px;
 		--size-2: 5px;
 		--size-3: 10px;
@@ -70,7 +90,9 @@
 	}
 
 	.nav {
-		margin-left: 10px;
+		position: fixed;
+		top: var(--size-5);
+		left: var(--size-6);
 		display: flex;
 	}
 
@@ -84,8 +106,53 @@
 		display: flex;
 		margin-right: 30px;
 		color: var(--fg);
+		text-transform: capitalize;
+		position: relative;
 	}
+
 	.nav_link:hover {
 		cursor: pointer;
+	}
+
+	.nav_link::after {
+		position: absolute;
+		content: ' ';
+		width: 100%;
+		height: 2px;
+		background-color: var(--accent);
+		left: 0;
+		bottom: -2px;
+		border-radius: var(--size-3);
+		transform: scale(0, 1);
+		transform-origin: left bottom;
+		transition: transform 0.3s;
+	}
+
+	.nav_link:hover::after {
+		transform: scale(1, 1);
+	}
+
+	.selected {
+		font-size: large;
+		display: flex;
+		margin-right: 30px;
+		color: var(--fg);
+		text-transform: capitalize;
+		position: relative;
+	}
+
+	.selected:hoiver {
+		cursor: pointer;
+	}
+
+	.selected::after {
+		position: absolute;
+		content: ' ';
+		width: 100%;
+		height: 2px;
+		background-color: var(--accent);
+		left: 0;
+		bottom: -2px;
+		border-radius: var(--size-3);
 	}
 </style>
