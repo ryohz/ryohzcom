@@ -1,14 +1,19 @@
 <script lang="ts">
-	import type { SocialLink } from '$lib/types';
+	import type { Head, SocialLink } from '$lib/types';
 
 	/** @type {import('./$types').PageData} */
 	export let data: {
 		social_links: SocialLink[];
+		head: Head;
 	};
 
 	let social_links = data.social_links;
-	console.log(social_links);
+	let head_title = data.head.links_title;
 </script>
+
+<svelte:head>
+	<title>{head_title}</title>
+</svelte:head>
 
 <div class="links">
 	{#each social_links as social_link}
