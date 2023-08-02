@@ -36,7 +36,7 @@
 <style>
 	article {
 		margin-top: var(--content-size-1);
-		max-inline-size: var(--content-size-5);
+		max-inline-size: 90%;
 		margin-inline: auto;
 	}
 

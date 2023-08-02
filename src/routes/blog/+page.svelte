@@ -1,12 +1,19 @@
 <script lang="ts">
-	import type { Post } from '$lib/types';
+	import type { Head, Post } from '$lib/types';
 
 	/** @type {import('./$types').PageData} */
-	export let data;
+	export let data: {
+		head: Head;
+		posts: Post[];
+	};
 
+	const head_title = data.head.blog_title;
 	const posts: Post[] = data.posts;
 </script>
 
+<svelte:head>
+	<title>{head_title}</title>
+</svelte:head>
 <div class="top">
 	<h1>Blog</h1>
 </div>
@@ -23,99 +30,193 @@
 			</a>
 			<div class="tags">
 				{#each post.categories as category}
-					<span class="tag">&num;{category}</span> {/each}
+					<span class="tag">&num;{category}</span>
+				{/each}
 			</div>
 		</hgroup>
 	{/each}
 </div>
 
 <style>
-	/* top */
-	.top {
-                margin-top: var(--content-size-1);
-		max-inline-size: var(--content-size-5);
-		margin-inline: auto;
+	@media screen and (min-width: 600px) {
+		/* top */
+		.top {
+			margin-top: var(--content-size-1);
+			max-inline-size: var(--content-size-5);
+			margin-inline: auto;
+		}
+
+		.line {
+			max-inline-size: var(--content-size-5);
+			margin-inline: auto;
+			height: 2px;
+			width: 100%;
+			background-color: var(--bg-alt);
+		}
+
+		/* links */
+		p {
+			color: var(--fg-alt);
+			font-size: var(--size-4);
+		}
+
+		.links {
+			margin-top: var(--size-7);
+			max-inline-size: var(--content-size-5);
+			margin-inline: auto;
+			display: flex;
+			flex-direction: column;
+			gap: var(--size-7);
+		}
+
+		.link {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.date {
+			margin-bottom: calc(- var(--size-5));
+		}
+
+		.title {
+			color: var(--fg);
+			position: relative;
+			display: inline;
+			width: fit-content;
+		}
+
+		.title::after {
+			position: absolute;
+			left: 0;
+			bottom: -1px;
+			content: ' ';
+			width: 100%;
+			height: 2%;
+			background-color: var(--accent);
+			transform: scale(0, 1);
+			transform-origin: left bottom;
+			transition: transform 0.3s;
+		}
+
+		.tags {
+			display: flex;
+			flex-direction: row;
+			gap: var(--size-3);
+		}
+
+		.tag {
+			background-color: var(--gray);
+			width: fit-content;
+			padding: var(--size-1);
+			border-radius: var(--size-3);
+		}
+
+		.description {
+			margin-top: calc(- var(--size-5));
+		}
+
+		/* event */
+		.link:hover > p {
+			color: var(--accent);
+		}
+
+		.link:hover > .title::after {
+			transform: scale(1, 1);
+		}
+
+		.tag:hover {
+			cursor: pointer;
+		}
 	}
 
-	.line {
-		max-inline-size: var(--content-size-5);
-		margin-inline: auto;
-		height: 2px;
-		width: 100%;
-		background-color: var(--bg-alt);
-	}
+	@media screen and (max-width: 400px) {
+		/* top */
+		.top {
+			margin-top: var(--content-size-1);
+			max-inline-size: 90%;
+			margin-inline: auto;
+		}
 
-	/* links */
-	p {
-		color: var(--fg-alt);
-		font-size: var(--size-4);
-	}
+		.line {
+			max-inline-size: 90%;
+			margin-inline: auto;
+			height: 2px;
+			width: 100%;
+			background-color: var(--bg-alt);
+		}
 
-	.links {
-		margin-top: var(--size-7);
-		max-inline-size: var(--content-size-5);
-		margin-inline: auto;
-		display: flex;
-		flex-direction: column;
-		gap: var(--size-7);
-	}
+		/* links */
+		p {
+			color: var(--fg-alt);
+			font-size: var(--size-4);
+		}
 
-	.link {
-		display: flex;
-		flex-direction: column;
-	}
+		.links {
+			margin-top: var(--size-7);
+			max-inline-size: 90%;
+			margin-inline: auto;
+			display: flex;
+			flex-direction: column;
+			gap: var(--size-7);
+		}
 
-	.date {
-		margin-bottom: calc(- var(--size-5));
-	}
+		.link {
+			display: flex;
+			flex-direction: column;
+		}
 
-	.title {
-		color: var(--fg);
-		position: relative;
-		display: inline;
-		width: fit-content;
-	}
+		.date {
+			margin-bottom: calc(- var(--size-5));
+		}
 
-	.title::after {
-		position: absolute;
-		left: 0;
-		bottom: -1px;
-		content: ' ';
-		width: 100%;
-		height: 2%;
-		background-color: var(--accent);
-		transform: scale(0, 1);
-		transform-origin: left bottom;
-		transition: transform 0.3s;
-	}
+		.title {
+			color: var(--fg);
+			position: relative;
+			display: inline;
+			width: fit-content;
+		}
 
-	.tags {
-		display: flex;
-		flex-direction: row;
-		gap: var(--size-3);
-	}
+		.title::after {
+			position: absolute;
+			left: 0;
+			bottom: -1px;
+			content: ' ';
+			width: 100%;
+			height: 2%;
+			background-color: var(--accent);
+			transform: scale(0, 1);
+			transform-origin: left bottom;
+			transition: transform 0.3s;
+		}
 
-	.tag {
-		background-color: var(--gray);
-		width: fit-content;
-		padding: var(--size-1);
-		border-radius: var(--size-3);
-	}
+		.tags {
+			display: flex;
+			flex-direction: row;
+			gap: var(--size-3);
+		}
 
-	.description {
-		margin-top: calc(- var(--size-5));
-	}
+		.tag {
+			background-color: var(--gray);
+			width: fit-content;
+			padding: var(--size-1);
+			border-radius: var(--size-3);
+		}
 
-	/* event */
-	.link:hover > p {
-		color: var(--accent);
-	}
+		.description {
+			margin-top: calc(- var(--size-5));
+		}
 
-	.link:hover > .title::after {
-		transform: scale(1, 1);
-	}
+		/* event */
+		.link:hover > p {
+			color: var(--accent);
+		}
 
-	.tag:hover {
-		cursor: pointer;
+		.link:hover > .title::after {
+			transform: scale(1, 1);
+		}
+
+		.tag:hover {
+			cursor: pointer;
+		}
 	}
 </style>

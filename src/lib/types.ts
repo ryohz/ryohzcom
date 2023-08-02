@@ -35,3 +35,10 @@ export interface Link {
     class: string,
     href: string,
 }
+
+export interface Head {
+    home_title: string,
+    blog_title: string,
+    links_title: string,
+    portfolio_title: string,
+}

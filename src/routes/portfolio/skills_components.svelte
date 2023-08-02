@@ -11,7 +11,6 @@
 <div class="root">
 	{#each categories as category}
 		<h1 class="category">{category}</h1>
-		<div class="lang_line" />
 		<div class="skills">
 			{#each skills as skill, i}
 				{#if skill.category === category}
@@ -29,71 +28,138 @@
 </div>
 
 <style>
-	.root {
-		margin-top: var(--content-size-1);
-		width: 100%;
-		max-inline-size: 70%;
-		margin-inline: auto;
+	@media screen and (min-width: 600px) {
+		.root {
+			margin-top: var(--content-size-1);
+			width: 100%;
+			max-inline-size: 70%;
+			margin-inline: auto;
+		}
+
+		h1 {
+			margin-top: var(--size-8);
+		}
+
+		.b1 {
+			display: flex;
+			flex-direction: column;
+			width: 85%;
+		}
+
+		.b1 p {
+			margin-top: -10px;
+		}
+
+		.skill {
+			display: flex;
+			position: relative;
+			background-color: var(--bg-alt);
+			width: 85%;
+			margin-bottom: var(--size-5);
+			margin-top: 0;
+			border-radius: var(--size-2);
+			padding: var(--size-4);
+			height: auto;
+		}
+
+		.skill h2 {
+			margin-top: 0;
+		}
+
+		.skills {
+			margin-top: var(--size-7);
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(var(--content-size-4), 1fr));
+		}
+
+		.icon {
+			/* width: var(--size-8); */
+			height: var(--size-7);
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: var(--size-4);
+		}
+		.category {
+			text-transform: capitalize;
+			position: relative;
+		}
+
+		.category::after {
+			position: absolute;
+			left: 0;
+			bottom: -10px;
+			content: ' ';
+			width: 100%;
+			height: 2px;
+			background-color: var(--bg-alt);
+		}
 	}
 
-	h1 {
-		margin-top: var(--size-8);
-	}
+	@media screen and (max-width: 400px) {
+		.root {
+			margin-top: var(--content-size-1);
+			width: 100%;
+			max-inline-size: 90%;
+			margin-inline: auto;
+		}
 
-	.b1 {
-		display: flex;
-		flex-direction: column;
-		width: 85%;
-	}
+		h1 {
+			margin-top: var(--size-8);
+		}
 
-	.b1 p {
-		margin-top: -10px;
-	}
+		.b1 {
+			display: flex;
+			flex-direction: column;
+			width: 80%;
+		}
 
-	.skill {
-		display: flex;
-		position: relative;
-		background-color: var(--bg-alt);
-		width: 350px;
-		margin-bottom: var(--size-5);
-		margin-top: 0;
-		border-radius: var(--size-2);
-		padding: var(--size-4);
-		height: auto;
-	}
+		.b1 p {
+			margin-top: -10px;
+		}
 
-	.skill h2 {
-		margin-top: 0;
-	}
+		.skill {
+			display: flex;
+			position: relative;
+			background-color: var(--bg-alt);
+			margin-bottom: var(--size-5);
+			margin-top: 0;
+			border-radius: var(--size-2);
+			padding: var(--size-4);
+			height: auto;
+		}
 
-	.icon {
-		/* width: var(--size-8); */
-		height: var(--size-7);
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: var(--size-4);
-	}
+		.skill h2 {
+			margin-top: 0;
+		}
 
-	.skills {
-		margin-top: var(--size-7);
-		width: 100%;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(var(--content-size-4), 1fr));
-	}
+		.skills {
+			margin-top: var(--size-7);
+			display: grid;
+		}
 
-	.category {
-		text-transform: capitalize;
-		position: relative;
-	}
+		.icon {
+			/* width: var(--size-8); */
+			height: var(--size-6);
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: var(--size-4);
+		}
+		.category {
+			text-transform: capitalize;
+			position: relative;
+		}
 
-	.category::after {
-		position: absolute;
-		left: 0;
-		bottom: -10px;
-		content: ' ';
-		width: 100%;
-		height: 2px;
-		background-color: var(--bg-alt);
+		.category::after {
+			position: absolute;
+			left: 0;
+			bottom: -10px;
+			content: ' ';
+			width: 100%;
+			height: 2px;
+			background-color: var(--bg-alt);
+		}
 	}
 </style>

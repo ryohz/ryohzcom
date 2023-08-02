@@ -1,22 +1,24 @@
 <script lang="ts">
+	import type { Head } from '$lib/types';
+
 	/** @type {import('./$types').PageData} */
 	export let data: {
+		head: Head;
 		meta: {
 			title: string;
-			description: string;
 		};
 		content: {
 			html: string;
 		};
 	};
 
+	let head_title = data.head.home_title;
 	let title = data.meta.title;
-	let description = data.meta.description;
 	let html = data.content.html;
 </script>
 
 <svelte:head>
-	<title>ryohzcom - {description}</title>
+	<title>{head_title}</title>
 </svelte:head>
 
 <div class="home">
@@ -25,21 +27,43 @@
 </div>
 
 <style>
-	.home {
-		display: flex;
-		text-align: center;
-		flex-direction: column;
-		margin-top: var(--content-size-3);
-		gap: var(--size-5);
-		max-inline-size: var(--content-size-5);
-		margin-inline: auto;
+	@media screen and (min-width: 600px) {
+		.home {
+			display: flex;
+			text-align: center;
+			flex-direction: column;
+			margin-top: var(--content-size-3);
+			gap: var(--size-5);
+			max-inline-size: 90%;
+			margin-inline: auto;
+		}
+
+		:global(a) {
+			color: var(--accent);
+		}
+
+		:global(body) {
+			font-family: 'space';
+		}
 	}
 
-	:global(a) {
-		color: var(--accent);
-	}
+	@media screen and (max-width: 400px) {
+		.home {
+			display: flex;
+			text-align: left;
+			flex-direction: column;
+			margin-top: var(--content-size-2);
+			gap: var(--size-5);
+			max-inline-size: 90%;
+			margin-inline: auto;
+		}
 
-        :global(body) {
-                font-family: 'space';
-        }
+		:global(a) {
+			color: var(--accent);
+		}
+
+		:global(body) {
+			font-family: 'space';
+		}
+	}
 </style>

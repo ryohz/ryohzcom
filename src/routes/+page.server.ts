@@ -1,4 +1,5 @@
 import {error} from "@sveltejs/kit";
+import { head } from "../datas/head";
 
 export async function load() {
     const paths = import.meta.glob('/src/datas/home.md', {eager: true});
@@ -7,10 +8,12 @@ export async function load() {
         const file = paths[path];
 
         if (file && typeof file === 'object' && "metadata" in file) {
-            const meta = file.metadata;
+            const page_meta = file.metadata;
+
             return {
-                meta: meta,
-                content: file.default.render()
+                head: head,
+                meta: page_meta,
+                content: file.default?.render(),
             }
         }
     }

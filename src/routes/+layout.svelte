@@ -69,6 +69,7 @@
 		color: var(--fg);
 		background-color: var(--bg);
 		font-family: 'space';
+		z-index: 1;
 	}
 
 	:global(a) {
@@ -91,23 +92,30 @@
 
 	.nav {
 		position: fixed;
-		top: var(--size-5);
-		left: var(--size-6);
+		top: 0;
+		left: 0;
 		display: flex;
+		background-color: var(--bg);
+		width: 100%;
+		height: var(--size-7);
+		z-index: 5;
 	}
 
 	.internal {
 		display: flex;
-		width: 50%;
+		position: absolute;
+		gap: var(--size-7);
+		left: var(--size-6);
+		bottom: 0;
 	}
 
 	.nav_link {
 		font-size: large;
 		display: flex;
-		margin-right: 30px;
 		color: var(--fg);
 		text-transform: capitalize;
 		position: relative;
+		top: 0px;
 	}
 
 	.nav_link:hover {
@@ -121,7 +129,7 @@
 		height: 2px;
 		background-color: var(--accent);
 		left: 0;
-		bottom: -2px;
+		bottom: 0px;
 		border-radius: var(--size-3);
 		transform: scale(0, 1);
 		transform-origin: left bottom;
@@ -135,7 +143,6 @@
 	.selected {
 		font-size: large;
 		display: flex;
-		margin-right: 30px;
 		color: var(--fg);
 		text-transform: capitalize;
 		position: relative;
@@ -152,7 +159,17 @@
 		height: 2px;
 		background-color: var(--accent);
 		left: 0;
-		bottom: -2px;
+		bottom: 0px;
 		border-radius: var(--size-3);
+	}
+
+	@media screen and (max-width: 400px) {
+		.internal {
+			display: flex;
+			position: absolute;
+			gap: var(--size-6);
+			left: var(--size-4);
+			bottom: 0;
+		}
 	}
 </style>

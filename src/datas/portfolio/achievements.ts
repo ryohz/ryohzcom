@@ -72,9 +72,23 @@ const archivements: Achivement[] = [
         blog: false
     },
     {
+        title: "Hack The BoxのHackerランク到達",
+        year: 2023,
+        future: true,
+        description: '今はnoob!',
+        blog: false,
+    },
+    {
         title: "SecHack365参加",
         description: "",
         year: 2024,
+        future: true,
+        blog: false
+    },
+    {
+        title: "国公立大学に受かる",
+        year: 2024,
+        description: '',
         future: true,
         blog: false
     }
