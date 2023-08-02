@@ -42,3 +42,10 @@ export interface Head {
     links_title: string,
     portfolio_title: string,
 }
+
+export interface SocialLink {
+    service_name: string,
+    username: string,
+    url: string,
+    icon: string,
+}
