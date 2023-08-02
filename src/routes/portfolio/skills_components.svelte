@@ -28,7 +28,7 @@
 </div>
 
 <style>
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 800px) {
 		.root {
 			margin-top: var(--content-size-1);
 			width: 100%;
@@ -97,7 +97,7 @@
 		}
 	}
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: 800px) {
 		.root {
 			margin-top: var(--content-size-1);
 			width: 100%;

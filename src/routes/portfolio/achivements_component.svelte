@@ -64,7 +64,7 @@
 		top: 0px;
 	}
 
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 800px) {
 		.root {
 			margin-top: var(--content-size-1);
 			max-inline-size: var(--content-size-5);
@@ -127,7 +127,7 @@
 
 		.contents {
 			position: fixed;
-			left: calc((100% - var(--content-size-5)) / 2 + var(--content-size-5) + var(--size-8));
+			left: calc((100% - var(--content-size-5)) / 2 + var(--content-size-5) + var(--size-7));
 			top: var(--content-size-1);
 		}
 
@@ -154,7 +154,7 @@
 		}
 	}
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: 800px) {
 		.root {
 			margin-top: calc(var(--content-size-1) + var(--size-7));
 			max-inline-size: 90%;

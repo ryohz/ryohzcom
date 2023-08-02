@@ -163,7 +163,7 @@
 		border-radius: var(--size-3);
 	}
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: 800px) {
 		.internal {
 			display: flex;
 			position: absolute;

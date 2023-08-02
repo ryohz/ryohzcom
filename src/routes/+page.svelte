@@ -27,7 +27,7 @@
 </div>
 
 <style>
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 800px) {
 		.home {
 			display: flex;
 			text-align: center;
@@ -47,7 +47,7 @@
 		}
 	}
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: 800px) {
 		.home {
 			display: flex;
 			text-align: left;

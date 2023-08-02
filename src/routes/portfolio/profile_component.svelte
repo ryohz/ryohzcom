@@ -19,7 +19,7 @@
 </div>
 
 <style>
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 800px) {
 		.profile {
 			margin-top: var(--content-size-2);
 			max-inline-size: var(--content-size-5);
@@ -61,7 +61,7 @@
 		}
 	}
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: 800px) {
 		.profile {
 			margin-top: var(--content-size-2);
 			max-inline-size: 90%;

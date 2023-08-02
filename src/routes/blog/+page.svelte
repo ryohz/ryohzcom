@@ -38,7 +38,7 @@
 </div>
 
 <style>
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 800px) {
 		/* top */
 		.top {
 			margin-top: var(--content-size-1);
@@ -129,7 +129,7 @@
 		}
 	}
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: 800px) {
 		/* top */
 		.top {
 			margin-top: var(--content-size-1);

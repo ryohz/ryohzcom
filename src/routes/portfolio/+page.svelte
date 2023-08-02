@@ -36,7 +36,6 @@
 
 	let head_title = data.head.portfolio_title;
 </script>
-
 <svelte:head>
 	<title>{head_title}</title>
 </svelte:head>
@@ -64,7 +63,7 @@
 {/if}
 
 <style>
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 980px) {
 		.index {
 			position: fixed;
 			top: 50%;
@@ -129,7 +128,7 @@
 		}
 	}
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: 980px) {
 		.index {
 			position: fixed;
 			top: var(--size-7);
