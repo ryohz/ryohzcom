@@ -12,7 +12,7 @@ export async function load({params, fetch}) {
             const post = await import(`../../../posts/${slug}.md`);
             if (post.metadata.published) {
                 return {
-                    content: post.default.render(),
+                    content: post.default,
                     metadata: post.metadata,
                 }
             }

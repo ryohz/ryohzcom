@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Link } from '$lib/types';
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
 
 	let initial_path = $page.url.pathname;
 

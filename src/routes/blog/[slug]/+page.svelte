@@ -3,13 +3,9 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data: {
-		content: {
-			html: string;
-		};
+		content: object;
 		metadata: Post;
 	};
-
-	let html = data.content.html;
 	let meta: Post = data.metadata;
 </script>
 
@@ -30,7 +26,7 @@
 		{/each}
 	</div>
 
-	{@html html}
+	<svelte:component this={data.content} />
 </article>
 
 <style>
@@ -38,6 +34,11 @@
 		margin-top: var(--content-size-1);
 		max-inline-size: 90%;
 		margin-inline: auto;
+		overflow-wrap: break-word;
+	}
+
+	article > * {
+		overflow-wrap: break-word;
 	}
 
 	h1 {
@@ -50,8 +51,11 @@
 		color: var(--fg);
 	}
 
-	pre {
+	:global(pre) {
 		font-family: 'space';
+		overflow: scroll;
+		border-radius: var(--size-2);
+		padding: var(--size-3);
 	}
 
 	.tags {
@@ -69,6 +73,6 @@
 	/* global */
 	:global(code) {
 		font-family: 'jetbrainsMono';
-                filter: brightness(90%);
+		filter: brightness(90%);
 	}
 </style>

@@ -18,23 +18,28 @@
 	<h1>Blog</h1>
 </div>
 <div class="line" />
+
 <div class="links">
-	{#each posts as post}
-		<hgroup>
-			<a href={`blog/${post.slug}`}>
-				<hgroup class="link">
-					<p class="date">{post.date}</p>
-					<h2 class="title">{post.title}</h2>
-					<p class="description">{post.description}</p>
-				</hgroup>
-			</a>
-			<div class="tags">
-				{#each post.categories as category}
-					<span class="tag">&num;{category}</span>
-				{/each}
-			</div>
-		</hgroup>
-	{/each}
+	{#if posts.length === 0}
+		<p>まだ記事は投稿されていません。</p>
+	{:else}
+		{#each posts as post}
+			<hgroup>
+				<a href={`blog/${post.slug}`}>
+					<hgroup class="link">
+						<p class="date">{post.date}</p>
+						<h2 class="title">{post.title}</h2>
+						<p class="description">{post.description}</p>
+					</hgroup>
+				</a>
+				<div class="tags">
+					{#each post.categories as category}
+						<span class="tag">&num;{category}</span>
+					{/each}
+				</div>
+			</hgroup>
+		{/each}
+	{/if}
 </div>
 
 <style>
@@ -191,7 +196,7 @@
 
 		.tags {
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			gap: var(--size-3);
 		}
 

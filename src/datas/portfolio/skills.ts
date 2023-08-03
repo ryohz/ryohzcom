@@ -17,7 +17,7 @@ const skills: Skill[] = [
     },
     {
         title: "Javascript",
-        description: "typescriptを使うようになってからは最近は全く使っていない。楽にかけて良い。",
+        description: "typescriptを使うようになってからは最近は全く使っていない。",
         level: 2,
         category: "language",
         icon: "/icons/skills/javascript.png"

@@ -10,3 +10,5 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 /scripts
 /ryohzcom-tools
+/src/routes/blog_test
+/src/routes/api/posts_dev
