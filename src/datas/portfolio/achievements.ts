@@ -72,8 +72,15 @@ const archivements: Achivement[] = [
         blog: false
     },
     {
-        title: "Hack The BoxのHackerランク到達",
+        title: "自宅サーバーでサービスの開発",
+        description: "",
         year: 2023,
+        future: true,
+        blog: false,
+    },
+    {
+        title: "Hack The BoxのHackerランク到達",
+        year: 2024,
         future: true,
         description: '今はnoob!',
         blog: false,
@@ -91,7 +98,7 @@ const archivements: Achivement[] = [
         description: '',
         future: true,
         blog: false
-    }
+    },
 ]
 
 export default archivements;
