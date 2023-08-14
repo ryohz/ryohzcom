@@ -58,11 +58,25 @@ const archivements: Achivement[] = [
         blog: false
     },
     {
-        title: "セキュリティキャンプ全国大会(受講中)",
+        title: "セキュリティキャンプ全国大会",
         description: "",
         year: 2023,
         future: false,
         blog: false
+    },
+    {
+        title: "HTB Web Challenge(Medium) until end of August",
+        description: "８月末までに全部終わらせたい。",
+        year: 2023,
+        future: true,
+        blog: false,
+    },
+    {
+        title: "SECCON で好成績を収めたい",
+        description: "",
+        year: 2023,
+        future: true,
+        blog: false,
     },
     {
         title: "数学検定準一級合格",
@@ -72,7 +86,7 @@ const archivements: Achivement[] = [
         blog: false
     },
     {
-        title: "自宅サーバーでサービスの開発",
+        title: "自宅サーバーを始める",
         description: "",
         year: 2023,
         future: true,
@@ -80,17 +94,24 @@ const archivements: Achivement[] = [
     },
     {
         title: "Hack The BoxのHackerランク到達",
-        year: 2024,
+        year: 2023,
         future: true,
         description: '今はnoob!',
         blog: false,
     },
     {
-        title: "SecHack365参加",
+        title: "自作os入門",
+        description: "pwnできるようになりたいので、低レイヤーの知識のためにみかん本で自作osに入門する。",
+        year: 2024,
+        future: true,
+        blog: false,
+    },
+    {
+        title: "SECCON で好成績を収めたい",
         description: "",
         year: 2024,
         future: true,
-        blog: false
+        blog: false,
     },
     {
         title: "国公立大学に受かる",
