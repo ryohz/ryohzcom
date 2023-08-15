@@ -79,6 +79,13 @@ const archivements: Achivement[] = [
         blog: false,
     },
     {
+        title: "大学数学(線形代数とか整数論とか)入門",
+        description: "暗号解析のために勉強したい",
+        year: 2023,
+        future: true,
+        blog: false,
+    },
+    {
         title: "数学検定準一級合格",
         description: "",
         year: 2023,

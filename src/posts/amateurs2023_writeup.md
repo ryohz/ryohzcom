@@ -1,5 +1,4 @@
 ---
-id: article2
 title: AmateursCTF2023 Writeup
 description: AmateursCTF 2023のwriteup
 date: '2023-8-4'
