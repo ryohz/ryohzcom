@@ -1,4 +1,4 @@
-import type {Achivement} from "$lib/types";
+import type { Achivement } from "$lib/types";
 
 const archivements: Achivement[] = [
     {
@@ -65,68 +65,33 @@ const archivements: Achivement[] = [
         blog: false
     },
     {
-        title: "HTB Web Challenge(Medium) until end of August",
-        description: "８月末までに全部終わらせたい。",
-        year: 2023,
-        future: true,
-        blog: false,
-    },
-    {
-        title: "SECCON で好成績を収めたい",
-        description: "",
-        year: 2023,
-        future: true,
-        blog: false,
-    },
-    {
-        title: "大学数学(線形代数とか整数論とか)入門",
-        description: "暗号解析のために勉強したい",
-        year: 2023,
-        future: true,
-        blog: false,
-    },
-    {
-        title: "数学検定準一級合格",
+        title: "HackTheBoxのHackerランクへ到達",
         description: "",
         year: 2023,
         future: true,
         blog: false
     },
     {
-        title: "自宅サーバーを始める",
-        description: "",
+        title: "Webアプリケーションデバッガーの最低限の機能の開発",
+        description: "b◯rpsuite alternativeをossで作りたい",
         year: 2023,
         future: true,
         blog: false,
     },
     {
-        title: "Hack The BoxのHackerランク到達",
-        year: 2023,
-        future: true,
-        description: '今はnoob!',
-        blog: false,
-    },
-    {
-        title: "自作os入門",
-        description: "pwnできるようになりたいので、低レイヤーの知識のためにみかん本で自作osに入門する。",
-        year: 2024,
-        future: true,
-        blog: false,
-    },
-    {
-        title: "SECCON で好成績を収めたい",
+        title: "数学検定準一級取得",
         description: "",
-        year: 2024,
-        future: true,
-        blog: false,
-    },
-    {
-        title: "国公立大学に受かる",
-        year: 2024,
-        description: '',
+        year: 2023,
         future: true,
         blog: false
     },
+    {
+        title: "基礎物理学履修",
+        description: "",
+        year: 2023,
+        future: true,
+        blog: false,
+    }
 ]
 
 export default archivements;
