@@ -64,34 +64,6 @@ const archivements: Achivement[] = [
         future: false,
         blog: false
     },
-    {
-        title: "HackTheBoxのHackerランクへ到達",
-        description: "",
-        year: 2023,
-        future: true,
-        blog: false
-    },
-    {
-        title: "Webアプリケーションデバッガーの最低限の機能の開発",
-        description: "b◯rpsuite alternativeをossで作りたい",
-        year: 2023,
-        future: true,
-        blog: false,
-    },
-    {
-        title: "数学検定準一級取得",
-        description: "",
-        year: 2023,
-        future: true,
-        blog: false
-    },
-    {
-        title: "基礎物理学履修",
-        description: "",
-        year: 2023,
-        future: true,
-        blog: false,
-    }
 ]
 
 export default archivements;
